@@ -6,11 +6,13 @@
                  [org.clojure/data.json "0.2.5"]
                  [compojure "1.4.0"]
                  [ring/ring-defaults "0.1.5"]
-		 [ring/ring-json "0.4.0"]
-		 [clj-http "2.1.0"]
-		 [cheshire "5.0.2"]]
+		             [ring/ring-json "0.4.0"]
+		             [clj-http "2.1.0"]
+		             [cheshire "5.0.2"]]
   :plugins [[lein-ring "0.9.7"]]
-  :ring {:handler capmetro-clj.handler/app}
+  :ring {:handler capmetro-clj.handler/app
+         :nrepl {:start? true
+	               :port 3000}}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.0"]]}})
